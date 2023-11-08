@@ -1,0 +1,99 @@
+/*Filter out just females from the class table*/
+data mydata.class_female_report; /*stores in new library mydata*/
+	set sashelp.class;
+	if sex = 'F';
+	put 'Female Observation';
+	
+Run;
+/*Creating a library practice*/
+libname mydata '/home/u63663995/Class_Data_Sets_Practice';
+run;
+
+
+/*Working with conditional statements*/
+data car_cylinders;
+	length car_size $15.; /*changing the allowable length of the variable so 'medium' isn't cut off*/
+	set sashelp.cars;
+	if cylinders=4 then car_size = 'small';
+	else if cylinders=6 then car_size = 'medium';
+	else car_size = 'large';
+run;
+
+/*practicing if/then do statements.  like if/else if but allows us to do two things*/
+data car_cylinders;
+	length car_size $15.; /*changing the allowable length of the variable so 'medium' isn't cut off*/
+	set sashelp.cars;
+	if cylinders=4 then do
+	car_size = 'small'
+	Popularity = 'High';
+	
+	else if cylinders=6 then car_size = 'medium';
+	else car_size = 'large';
+run;
+
+/*Using infomats example, so that sas can read special characters like dollar signs or slashes for dates, etc.*/
+data cust_trans;
+	format Date MMDDYY10.;  /*changes date to be readable*/
+	input Price Dollar6. Region $ Date MMDDYY10. ;  /* Dollar6 allows sas to read dollar sign*/
+	datalines;
+$54.12 Sw 10/07/2023
+$32.14 Mw 12/12/2023
+$56.19 Nw 11/22/2023
+;
+run;
+
+/*Practice with function*/
+data cust_trans1;
+	set cust_trans;
+	Rounded_Price = ceil(price); /*Rounding up price*/
+	Month = month(date); /*Breaking up the date*/
+	Day = day(date);
+	year = year(date);
+run;
+
+/*example of concatenation combining make and model variables in this case*/
+data make_model;
+	set sashelp.cars;
+	model_make = catx(' ', make, model);
+run;
+
+/*proc contents to look at data*/
+proc contents data = sashelp.cars;
+run;
+
+/*proc sort sorts data by a variable*/
+proc sort data = sashelp.cars out = cars;
+	by type;
+run;
+
+/* proc print prints out a report*/
+proc print data = cars;
+	var type invoice make model;
+	by type;  /* must sort first before proc print by type*/
+	sum invoice;
+	title 'Cars total invoice by type';
+	footnote 'Auto Analyst Department - 12/31/2023';
+run;
+
+/*example of proc format*/
+proc format;
+	value $gender 'M' = 'Male'
+				  'F' = 'Female';
+	value level 11-12 = 'Pre-teen'
+		        13-17 = 'Teen';
+run;
+
+proc print data = sashelp.class;
+	format sex $gender. age level.;
+run;
+
+/* proc means gives you basic summary statistics*/
+proc means data = sashelp.baseball mean median stddev max min maxdec=2;
+	class div;
+	var CrHits;
+run;
+
+/* proc export exports data, but this can also be done going to the library, right-clicking and choosing 
+export*/
+
+
