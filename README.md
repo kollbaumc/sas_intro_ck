@@ -8,5 +8,6 @@
   4. importpractice-This is practice importing data from an outside source and changing formats to fit SAS.
   5. libname and libname2-These are creating libraries with libname2 using options so data will work in SAS and using proc contents to describe the data.
   6. shoeprogrampractice-This program creates a new column (NetSales) from a data table and then finds the mean and sum of netsales by region.
-  7. validatingpractice-This program uses proc print, proc means, proc univariate, and proc freq to help validate the data from a storm summary table.  
+  7. validatingpractice-This program uses proc print, proc means, proc univariate, and proc freq to help validate the data from a storm summary table.
+  8. MacroPractice-This is a basic program giving an example of introducing macro variables so you only have to change the macro variable and not all the variables inside the program.    
 
