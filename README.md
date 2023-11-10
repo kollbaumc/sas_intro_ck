@@ -10,5 +10,6 @@
   6. shoeprogrampractice-This program creates a new column (NetSales) from a data table and then finds the mean and sum of netsales by region.
   7. validatingpractice-This program uses proc print, proc means, proc univariate, and proc freq to help validate the data from a storm summary table.
   8. MacroPractice-This is a basic program giving an example of introducing macro variables so you only have to change the macro variable and not all the variables inside the program.
-  9. Data_Manipulation_Practice-This is a practice activity where a new table is created from an existing table using a where and format statement.  The Geo column was dropped.     
+  9. Data_Manipulation_Practice-This is a practice activity where a new table is created from an existing table using a where and format statement.  The Geo column was dropped.
+  10. gettingridofduplicates-This is a practice activity where we get rid of any duplicate rows of data in a table.      
 
