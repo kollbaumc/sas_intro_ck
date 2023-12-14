@@ -12,5 +12,6 @@
   8. MacroPractice-This is a basic program giving an example of introducing macro variables so you only have to change the macro variable and not all the variables inside the program.
   9. Data_Manipulation_Practice-This is a practice activity where a new table is created from an existing table using a where and format statement.  The Geo column was dropped.
   10. gettingridofduplicates-This is a practice activity where we get rid of any duplicate rows of data in a table.
-  11. list_of_cars2-This is a practice where I created a new variable that determines whether a car is "American Made" or not and then creates a list of cars that are American made and under $27,000.     
+  11. list_of_cars2-This is a practice where I created a new variable that determines whether a car is "American Made" or not and then creates a list of cars that are American made and under $27,000.
+  12. age_analysis-This is a age analysis I did where I was taking insurance data and breaking it into 5 year age groups and measuring the number of applications, net applications, premium and other measures that fall into these groups.    
 
